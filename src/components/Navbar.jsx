@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X, ArrowUpRight, FileText, Sparkles } from "lucide-react";
+import { Menu, X, ArrowUpRight, FileText } from "lucide-react";
 import { profileData } from "../data/portfolioData";
 
 export default function Navbar() {
@@ -20,7 +20,7 @@ export default function Navbar() {
     { name: "Projects", href: "#projects" },
     { name: "Research", href: "#research" },
     { name: "Experience", href: "#experience" },
-    { name: "Certifications", href: "#certifications" },
+    { name: "Credentials", href: "#certifications" },
     { name: "Education", href: "#education" },
   ];
 
@@ -28,7 +28,7 @@ export default function Navbar() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#0a0c10]/85 backdrop-blur-md border-b border-white/[0.07] py-3.5"
+          ? "bg-[#0f0f0f]/90 backdrop-blur-md border-b border-[#d4a574]/15 py-3.5"
           : "bg-transparent py-5"
       }`}
     >
@@ -39,27 +39,27 @@ export default function Navbar() {
           className="group flex items-center gap-3 transition-opacity hover:opacity-90"
           aria-label="Mohammad Amaan portfolio home"
         >
-          <div className="relative flex h-10 w-10 items-center justify-center rounded-xl border border-emerald-500/30 bg-emerald-500/10 font-mono text-sm font-bold text-emerald-400 transition group-hover:border-emerald-400 group-hover:bg-emerald-500/20">
+          <div className="relative flex h-10 w-10 items-center justify-center rounded-full border border-[#d4a574]/40 bg-[#171615] font-serif text-base font-semibold italic text-[#d4a574] transition group-hover:border-[#d4a574] group-hover:bg-[#d4a574]/10 shadow-sm">
             <span>MA</span>
-            <span className="absolute -bottom-0.5 -right-0.5 h-2 w-2 rounded-full bg-emerald-400 ring-2 ring-[#0a0c10]" />
+            <span className="absolute -bottom-0.5 -right-0.5 h-2 w-2 rounded-full bg-[#d4a574] ring-2 ring-[#0f0f0f]" />
           </div>
           <div className="flex flex-col">
-            <span className="text-sm font-bold tracking-tight text-white group-hover:text-emerald-300 transition-colors">
+            <span className="font-serif text-base font-medium tracking-tight text-[#e8e4df] group-hover:text-[#d4a574] transition-colors">
               {profileData.name}
             </span>
-            <span className="font-mono text-[10px] tracking-wider uppercase text-zinc-400">
+            <span className="font-mono text-[9px] tracking-widest uppercase text-[#9a9590]">
               Data Science & AI
             </span>
           </div>
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-6 lg:flex">
+        <nav className="hidden items-center gap-7 lg:flex">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-xs font-medium text-zinc-400 transition-colors hover:text-emerald-300"
+              className="text-xs font-medium tracking-wide text-[#9a9590] transition-colors hover:text-[#d4a574]"
             >
               {link.name}
             </a>
@@ -72,15 +72,15 @@ export default function Navbar() {
             href={profileData.resume}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/[0.03] px-3.5 py-2 text-xs font-semibold text-zinc-300 transition hover:border-emerald-500/40 hover:bg-emerald-500/10 hover:text-white"
+            className="inline-flex items-center gap-1.5 rounded-full border border-[#9a9590]/30 bg-transparent px-4 py-2 text-xs font-medium text-[#e8e4df] transition hover:border-[#d4a574]/60 hover:text-[#d4a574] hover:bg-[#d4a574]/5"
           >
-            <FileText size={13} className="text-emerald-400" />
+            <FileText size={13} className="text-[#d4a574]" />
             Resume
           </a>
 
           <a
             href="#contact"
-            className="inline-flex items-center gap-1.5 rounded-lg bg-emerald-500 px-4 py-2 text-xs font-semibold text-black shadow-lg shadow-emerald-500/20 transition hover:bg-emerald-400"
+            className="inline-flex items-center gap-1.5 rounded-full bg-[#d4a574] px-5 py-2 text-xs font-semibold text-[#0f0f0f] transition hover:bg-[#c9b896] shadow-sm hover:shadow-md"
           >
             Contact
             <ArrowUpRight size={13} />
@@ -91,7 +91,7 @@ export default function Navbar() {
         <button
           type="button"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="rounded-lg border border-white/10 p-2 text-zinc-300 transition hover:bg-white/5 lg:hidden"
+          className="rounded-full border border-white/10 p-2 text-[#e8e4df] transition hover:border-[#d4a574]/40 hover:bg-white/5 lg:hidden"
           aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileMenuOpen}
         >
@@ -101,32 +101,32 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="border-b border-white/10 bg-[#0c0f15]/95 px-6 py-6 backdrop-blur-xl lg:hidden">
+        <div className="border-b border-[#d4a574]/15 bg-[#121110]/95 px-6 py-6 backdrop-blur-xl lg:hidden">
           <div className="flex flex-col gap-3">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="py-2 text-sm font-medium text-zinc-300 hover:text-emerald-400 transition-colors"
+                className="py-2 text-sm font-medium text-[#9a9590] hover:text-[#d4a574] transition-colors"
               >
                 {link.name}
               </a>
             ))}
-            <div className="mt-4 flex flex-col gap-2 pt-4 border-t border-white/10">
+            <div className="mt-4 flex flex-col gap-2 pt-4 border-t border-white/[0.08]">
               <a
                 href={profileData.resume}
                 download
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-center gap-2 rounded-lg border border-white/10 bg-white/[0.04] py-2.5 text-xs font-semibold text-zinc-200"
+                className="flex items-center justify-center gap-2 rounded-full border border-[#9a9590]/30 py-2.5 text-xs font-medium text-[#e8e4df]"
               >
-                <FileText size={14} className="text-emerald-400" />
+                <FileText size={14} className="text-[#d4a574]" />
                 Download Resume
               </a>
               <a
                 href="#contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-center gap-2 rounded-lg bg-emerald-500 py-2.5 text-xs font-semibold text-black"
+                className="flex items-center justify-center gap-2 rounded-full bg-[#d4a574] py-2.5 text-xs font-semibold text-[#0f0f0f]"
               >
                 Contact Me
                 <ArrowUpRight size={14} />

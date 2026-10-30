@@ -16,7 +16,7 @@ import { profileData } from "../data/portfolioData";
 
 export default function Contact() {
   const [copied, setCopied] = useState(false);
-  const [subject, setSubject] = useState("Opportunity / Project Collaboration");
+  const [subject, setSubject] = useState("Summer Internship / AI Engineering");
   const [note, setNote] = useState("");
 
   const handleCopyEmail = () => {
@@ -30,65 +30,75 @@ export default function Contact() {
   )}&body=${encodeURIComponent(note)}`;
 
   return (
-    <section id="contact" className="relative py-20 lg:py-28 border-b border-white/[0.06] bg-[#0c0f16]">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+    <section id="contact" className="relative py-24 lg:py-32 border-b border-[#d4a574]/15 bg-[#0f0f0f] overflow-hidden">
+      {/* Ambient Dark Botanical Glows */}
+      <div className="absolute top-1/3 -left-32 h-96 w-96 rounded-full bg-[#d4a574]/5 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 right-[-10%] h-96 w-96 rounded-full bg-[#c4856a]/5 blur-[140px] pointer-events-none" />
+
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
         {/* Section Header */}
-        <div className="flex items-center gap-2 font-mono text-[11px] font-semibold tracking-widest text-emerald-400 uppercase">
-          <span>08 / GET IN TOUCH</span>
-          <span className="h-px w-10 bg-emerald-500/30" />
+        <div className="flex items-center gap-2 font-mono text-[11px] font-semibold tracking-widest text-[#d4a574] uppercase">
+          <span>08 / INQUIRIES & COLLABORATION</span>
+          <span className="h-px w-10 bg-[#d4a574]/30" />
         </div>
 
         <div className="mt-4 grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
           <div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
-              Let's collaborate on <br />
-              <span className="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">
-                intelligent systems.
-              </span>
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#e8e4df] leading-tight">
+              Let’s cultivate <br />
+              <span className="italic text-[#d4a574]">intelligent architectures.</span>
             </h2>
           </div>
-          <p className="text-sm leading-relaxed text-zinc-300 max-w-md">
-            Open to summer 2025/2026 internships, AI/ML engineering roles, data science opportunities, and research collaborations.
+          <p className="font-sans text-sm leading-relaxed text-[#9a9590] max-w-md">
+            Currently welcoming summer 2025/2026 internships, AI/ML engineering positions, applied data science roles, and academic research collaborations.
           </p>
         </div>
 
-        {/* Contact Layout */}
-        <div className="mt-12 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-          {/* Direct Channels */}
-          <div className="glass-panel flex flex-col justify-between rounded-2xl border border-white/10 bg-[#0e121a] p-7 sm:p-9 shadow-lg">
+        {/* Contact Layout: Asymmetric 2-Column */}
+        <div className="mt-14 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+          {/* Direct Channels Column */}
+          <div className="flex flex-col justify-between rounded-2xl border border-[#d4a574]/15 bg-[#141312] p-7 sm:p-9 shadow-xl relative backdrop-blur-sm">
             <div>
-              <span className="font-mono text-xs font-bold text-emerald-400 uppercase tracking-wider">
-                Direct Channels
-              </span>
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-xs font-semibold text-[#d4a574] uppercase tracking-wider">
+                  Direct Channels
+                </span>
+                <span className="inline-flex items-center gap-1.5 font-mono text-[11px] text-[#9a9590]">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#d4a574] animate-pulse" />
+                  Fast Response (24h)
+                </span>
+              </div>
 
               {/* Email Card with Copy button */}
-              <div className="mt-5 rounded-2xl border border-emerald-500/30 bg-emerald-500/[0.05] p-5">
+              <div className="mt-6 rounded-2xl border border-[#d4a574]/25 bg-[#d4a574]/[0.03] p-6 transition duration-300 hover:border-[#d4a574]/40">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-medium text-emerald-300">Primary Email Address</span>
+                  <span className="text-xs font-mono text-[#d4a574] tracking-wider uppercase">
+                    Primary Email
+                  </span>
                   <button
                     onClick={handleCopyEmail}
-                    className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-1 text-xs font-semibold text-emerald-300 hover:bg-emerald-500/20 transition"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-[#d4a574]/30 bg-[#d4a574]/10 px-3 py-1 text-xs font-medium text-[#d4a574] hover:bg-[#d4a574]/20 transition"
                   >
                     {copied ? (
                       <>
-                        <Check size={13} className="text-emerald-400" />
-                        <span>Copied!</span>
+                        <Check size={12} className="text-[#e8b4b8]" />
+                        <span className="text-[#e8b4b8]">Copied</span>
                       </>
                     ) : (
                       <>
-                        <Copy size={13} />
-                        <span>Copy Email</span>
+                        <Copy size={12} />
+                        <span>Copy</span>
                       </>
                     )}
                   </button>
                 </div>
-                <p className="mt-3 font-mono text-base sm:text-lg font-bold text-white break-all">
+                <p className="mt-3 font-mono text-base sm:text-lg font-semibold text-[#e8e4df] break-all">
                   {profileData.email}
                 </p>
-                <div className="mt-4 flex flex-wrap gap-2">
+                <div className="mt-4 flex flex-wrap gap-2.5">
                   <a
                     href={`mailto:${profileData.email}`}
-                    className="inline-flex items-center gap-1 rounded-lg bg-emerald-500 px-3.5 py-1.5 text-xs font-bold text-black hover:bg-emerald-400 transition"
+                    className="inline-flex items-center gap-1.5 rounded-full bg-[#d4a574] px-4 py-1.5 text-xs font-semibold text-[#0f0f0f] hover:bg-[#c9b896] transition"
                   >
                     Open Mail Client <ArrowUpRight size={13} />
                   </a>
@@ -98,9 +108,9 @@ export default function Contact() {
                     )}`}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-1 rounded-lg border border-white/10 bg-white/[0.05] px-3.5 py-1.5 text-xs font-semibold text-zinc-200 hover:bg-white/10 transition"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-[#d4a574]/20 bg-white/[0.02] px-4 py-1.5 text-xs font-medium text-[#e8e4df] hover:border-[#d4a574]/40 hover:bg-[#d4a574]/5 transition"
                   >
-                    Open in Gmail Web <ArrowUpRight size={13} />
+                    Compose in Gmail <ArrowUpRight size={13} />
                   </a>
                 </div>
               </div>
@@ -109,23 +119,23 @@ export default function Contact() {
               <div className="mt-6 grid gap-4 sm:grid-cols-2">
                 <a
                   href={`tel:${profileData.phone.replace(/[^0-9+]/g, "")}`}
-                  className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-4 transition hover:border-emerald-500/30"
+                  className="rounded-xl border border-[#d4a574]/15 bg-[#0f0f0f]/60 p-4 transition duration-300 hover:border-[#d4a574]/40 group"
                 >
-                  <div className="flex items-center gap-2 text-xs font-mono text-zinc-400">
-                    <Phone size={14} className="text-emerald-400" />
-                    <span>Direct Phone</span>
+                  <div className="flex items-center gap-2 text-xs font-mono text-[#9a9590]">
+                    <Phone size={13} className="text-[#d4a574] group-hover:scale-110 transition-transform" />
+                    <span>Direct Line</span>
                   </div>
-                  <p className="mt-1 font-mono text-sm font-bold text-white">
+                  <p className="mt-1 font-mono text-sm font-semibold text-[#e8e4df]">
                     {profileData.phone}
                   </p>
                 </a>
 
-                <div className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-4">
-                  <div className="flex items-center gap-2 text-xs font-mono text-zinc-400">
-                    <MapPin size={14} className="text-emerald-400" />
+                <div className="rounded-xl border border-[#d4a574]/15 bg-[#0f0f0f]/60 p-4">
+                  <div className="flex items-center gap-2 text-xs font-mono text-[#9a9590]">
+                    <MapPin size={13} className="text-[#c4856a]" />
                     <span>Location</span>
                   </div>
-                  <p className="mt-1 text-sm font-bold text-white">
+                  <p className="mt-1 text-sm font-semibold text-[#e8e4df]">
                     {profileData.location}
                   </p>
                 </div>
@@ -137,76 +147,78 @@ export default function Contact() {
                   href={profileData.linkedin}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex flex-1 items-center justify-between rounded-xl border border-white/10 bg-[#121620] p-4 transition hover:border-emerald-500/40"
+                  className="flex flex-1 items-center justify-between rounded-xl border border-[#d4a574]/15 bg-[#0f0f0f]/60 p-4 transition duration-300 hover:border-[#d4a574]/40 group"
                 >
                   <div className="flex items-center gap-3">
-                    <Linkedin size={18} className="text-emerald-400" />
-                    <span className="text-xs font-bold text-white">LinkedIn Network</span>
+                    <Linkedin size={17} className="text-[#d4a574] group-hover:scale-110 transition-transform" />
+                    <span className="text-xs font-semibold text-[#e8e4df]">LinkedIn Profile</span>
                   </div>
-                  <ArrowUpRight size={15} className="text-zinc-500" />
+                  <ArrowUpRight size={14} className="text-[#9a9590] group-hover:text-[#d4a574] transition-colors" />
                 </a>
 
                 <a
                   href={profileData.github}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex flex-1 items-center justify-between rounded-xl border border-white/10 bg-[#121620] p-4 transition hover:border-emerald-500/40"
+                  className="flex flex-1 items-center justify-between rounded-xl border border-[#d4a574]/15 bg-[#0f0f0f]/60 p-4 transition duration-300 hover:border-[#d4a574]/40 group"
                 >
                   <div className="flex items-center gap-3">
-                    <Github size={18} className="text-emerald-400" />
-                    <span className="text-xs font-bold text-white">GitHub Repositories</span>
+                    <Github size={17} className="text-[#d4a574] group-hover:scale-110 transition-transform" />
+                    <span className="text-xs font-semibold text-[#e8e4df]">GitHub Repositories</span>
                   </div>
-                  <ArrowUpRight size={15} className="text-zinc-500" />
+                  <ArrowUpRight size={14} className="text-[#9a9590] group-hover:text-[#d4a574] transition-colors" />
                 </a>
               </div>
             </div>
 
             {/* Resume Callout */}
-            <div className="mt-8 flex items-center justify-between rounded-xl border border-white/[0.08] bg-black/30 p-4">
+            <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 rounded-xl border border-[#d4a574]/20 bg-[#0f0f0f]/80 p-5">
               <div>
-                <p className="text-xs font-semibold text-white">Need an offline copy?</p>
-                <p className="text-[11px] text-zinc-400">Verified resume PDF with full academic & internship credentials</p>
+                <p className="text-xs font-serif text-[#e8e4df] font-semibold tracking-wide">Looking for a verified offline credential?</p>
+                <p className="text-[11px] text-[#9a9590] mt-0.5">Comprehensive resume with academic, project & internship records</p>
               </div>
               <a
                 href={profileData.resume}
                 download="Mohammad_Amaan_Resume.pdf"
-                className="inline-flex items-center gap-1.5 rounded-lg bg-white/10 px-3.5 py-2 text-xs font-semibold text-white hover:bg-white/20 transition"
+                className="inline-flex items-center gap-1.5 rounded-full bg-[#d4a574]/10 border border-[#d4a574]/30 px-4 py-2 text-xs font-medium text-[#d4a574] hover:bg-[#d4a574] hover:text-[#0f0f0f] transition duration-200"
               >
-                <Download size={13} className="text-emerald-400" />
+                <Download size={13} />
                 Download PDF
               </a>
             </div>
           </div>
 
-          {/* Quick Note Composer / Outreach Box */}
-          <div className="glass-panel flex flex-col justify-between rounded-2xl border border-white/10 bg-[#0e121a] p-7 sm:p-9 shadow-lg">
+          {/* Outreach / Message Composer Card */}
+          <div className="flex flex-col justify-between rounded-2xl border border-[#d4a574]/15 bg-[#141312] p-7 sm:p-9 shadow-xl relative backdrop-blur-sm">
             <div>
               <div className="flex items-center gap-2">
-                <MessageSquare size={18} className="text-emerald-400" />
-                <h3 className="text-base font-bold text-white">Quick Inquiries & Outreach</h3>
+                <MessageSquare size={17} className="text-[#d4a574]" />
+                <h3 className="font-serif text-lg font-normal text-[#e8e4df]">Initiate an Inquiry</h3>
               </div>
-              <p className="mt-1 text-xs text-zinc-400">
-                Draft a message directly or choose a standard inquiry template:
+              <p className="mt-1 text-xs text-[#9a9590]">
+                Select a topic or compose a customized inquiry directly:
               </p>
 
               {/* Inquiry Type Selector */}
-              <div className="mt-5 space-y-2">
-                <label className="text-xs font-mono text-zinc-400">Inquiry Purpose:</label>
+              <div className="mt-6 space-y-2">
+                <label className="text-[11px] font-mono text-[#9a9590] uppercase tracking-wider">
+                  Inquiry Purpose:
+                </label>
                 <div className="flex flex-wrap gap-2">
                   {[
                     "Summer Internship 2025/2026",
-                    "Full-Time Role",
+                    "AI/ML Engineering Role",
                     "Research Collaboration",
-                    "Project Discussion",
+                    "Technical Discussion",
                   ].map((item) => (
                     <button
                       key={item}
                       type="button"
                       onClick={() => setSubject(item)}
-                      className={`rounded-lg px-2.5 py-1 text-xs font-medium transition ${
+                      className={`rounded-full px-3 py-1.5 text-xs transition duration-200 ${
                         subject === item
-                          ? "bg-emerald-500 text-black font-semibold"
-                          : "border border-white/10 bg-white/[0.02] text-zinc-300 hover:text-white"
+                          ? "bg-[#d4a574] text-[#0f0f0f] font-semibold shadow-sm"
+                          : "border border-[#d4a574]/20 bg-white/[0.02] text-[#9a9590] hover:text-[#e8e4df] hover:border-[#d4a574]/40"
                       }`}
                     >
                       {item}
@@ -216,29 +228,31 @@ export default function Contact() {
               </div>
 
               {/* Message Note Area */}
-              <div className="mt-5 space-y-2">
-                <label className="text-xs font-mono text-zinc-400">Message Outline (Optional):</label>
+              <div className="mt-6 space-y-2">
+                <label className="text-[11px] font-mono text-[#9a9590] uppercase tracking-wider">
+                  Message Outline (Optional):
+                </label>
                 <textarea
                   rows={4}
                   value={note}
                   onChange={(e) => setNote(e.target.value)}
-                  placeholder="Hello Mohammad, we came across your work on Explainable AI / Hospital Management System and would like to discuss..."
-                  className="w-full rounded-xl border border-white/10 bg-black/40 p-3.5 text-xs text-white placeholder-zinc-500 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                  placeholder="Hello Mohammad, we came across your work on Explainable AI / Healthcare Systems and would love to connect regarding..."
+                  className="w-full rounded-xl border border-[#d4a574]/20 bg-[#0f0f0f] p-4 text-xs text-[#e8e4df] placeholder-[#9a9590]/50 focus:border-[#d4a574] focus:outline-none focus:ring-1 focus:ring-[#d4a574]/30 transition"
                 />
               </div>
             </div>
 
-            <div className="mt-6 pt-5 border-t border-white/[0.08]">
+            <div className="mt-8 pt-5 border-t border-[#d4a574]/15">
               <a
                 href={mailtoLink}
-                className="flex items-center justify-center gap-2 rounded-xl bg-emerald-500 py-3.5 text-xs font-bold text-black transition hover:bg-emerald-400 shadow-md shadow-emerald-500/20"
+                className="flex items-center justify-center gap-2 rounded-full bg-[#d4a574] py-3.5 text-xs font-semibold text-[#0f0f0f] transition duration-200 hover:bg-[#c9b896] shadow-md shadow-[#d4a574]/15"
               >
                 <Mail size={15} />
-                <span>Send via Email Client</span>
+                <span>Send via Default Email Client</span>
                 <ArrowUpRight size={14} />
               </a>
-              <p className="mt-2 text-center text-[10px] text-zinc-400">
-                Typically responds within 24 hours.
+              <p className="mt-2.5 text-center font-mono text-[11px] text-[#9a9590]">
+                Dispatches straight to <span className="text-[#d4a574]">{profileData.email}</span>
               </p>
             </div>
           </div>
