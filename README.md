@@ -1,4 +1,4 @@
-# Amir Khushroo — Portfolio
+# Mohammad Amaan — Portfolio
 
 A responsive, single-page portfolio built with React, Vite, Tailwind CSS v4, and Lucide icons. Visual direction: editorial, asymmetric layout; near-black canvas; lime accent; custom AR monogram; subtle grid and motion.
 
